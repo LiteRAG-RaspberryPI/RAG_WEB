@@ -17,7 +17,7 @@ async function sendMessage() {
   appendChat(message, "user");
   input.value = "";
 
-  // 서버에 전송 (엔드포인트1)
+  // 서버에 전송
   const res = await fetch("http://192.168.0.20:3001/ask", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -35,7 +35,7 @@ async function uploadPDF() {
   const formData = new FormData();
   formData.append("file", file);
 
-  // PDF 업로드 (엔드포인트3)
+  // PDF 업로드
   await fetch("http://192.168.0.20:3001/ingest", {
     method: "POST",
     body: formData,
